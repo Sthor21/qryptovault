@@ -1,0 +1,139 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 100%);
+    border-bottom: 1px solid #2a3441;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .nav-container h1 {
+    color: #00d4ff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  
+  .nav-container h1::before {
+    /* content: "⬡"; */
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: #00d4ff;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .nav-links p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .nav-links p:hover {
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .nav-links p:active {
+    transform: translateY(0);
+  }
+  
+  /* Special styling for different nav items */
+  .nav-links p:nth-child(1)::before {
+    /* content: "○"; */
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  .nav-links p:nth-child(2)::before {
+    /* content: "⚡"; */
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  .nav-links p:nth-child(3)::before {
+    /* content: "📤"; */
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  .nav-links p:nth-child(4)::before {
+    /* content: "📥"; */
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  .nav-links p:nth-child(5)::before {
+    content: "🎮";
+    /* margin-right: 0.5rem; */
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  .nav-links p:last-child::before {
+    /* content: "↗"; */
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .nav-container h1 {
+      font-size: 1.5rem;
+    }
+    
+    .nav-links {
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .nav-links p {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+    
+    .nav-links p {
+      text-align: center;
+      width: 100%;
+    }
+  }
