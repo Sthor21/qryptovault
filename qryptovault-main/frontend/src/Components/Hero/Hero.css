@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: flex-start;
     box-sizing: border-box;
-    background-color: #083037;
+    background-color: black;
     padding: 2rem;
     gap: 4rem;
     overflow-x:hidden;
@@ -17,14 +17,31 @@
     color: white;
     font-size: 1rem;
 }
+
+.download-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+.spane:hover .download-btn {
+  display: block;
+}
+
 .inbox-section{
     display: flex;
     flex-direction: column;
     flex: 2;
     padding: 2rem;
-    background-color: #081824;
+    background: linear-gradient(135deg, 
+      rgba(0, 255, 255, 0.1) 0%,
+      rgba(57, 255, 20, 0.05) 50%,
+      rgba(191, 0, 255, 0.1) 100%
+    );
     color: white;
-    border: 2px solid #081824;
+    border: 1px solid var(--border-glow);
     border-radius: 10px;
     gap: 1rem;
     max-width: 400px;
@@ -35,9 +52,13 @@
     flex-direction: column;
     flex: 4;
     padding: 2rem;
-    background-color: #081824;
+    background: linear-gradient(135deg, 
+      rgba(0, 255, 255, 0.1) 0%,
+      rgba(57, 255, 20, 0.05) 50%,
+      rgba(191, 0, 255, 0.1) 100%
+    );
     color: white;
-    border: 2px solid #081824;
+    border: 1px solid var(--border-glow);
     border-radius: 10px;
     gap: 1rem;
     width: 100%;
@@ -96,11 +117,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #444;
+    background-color: black;
+    border: 1px solid cyan;
+    color: var(--neon-purple);/* optional for visibility */
     padding: 1.2rem;
     border-radius: 5px;
     width: 100%;
-    color: white;
     font-size: 1rem;
     margin-bottom: 0.5rem;
     cursor: pointer;

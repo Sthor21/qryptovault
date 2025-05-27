@@ -4,6 +4,7 @@ import axios from "axios";
 import io from "socket.io-client";
 import "./Hero.css";
 import inboxMessages from "../Assets/inbox"; // Mock data
+import { Download } from "lucide-react";
 
 const API_URL = "http://localhost:8000";
 const socket = io(API_URL);
@@ -15,6 +16,8 @@ export default function Hero() {
     const [isLoading, setIsLoading] = useState(false);
     const [serverMessage, setServerMessage] = useState({ type: "", text: "" });
     const [blockchain, setBlockchain] = useState([]);
+    const [isHovered, setIsHovered] = useState(false);
+
 
     useEffect(() => {
         axios
@@ -57,6 +60,9 @@ export default function Hero() {
     const handleFileUpload = (event) => {
         setUploadedFile(event.target.files[0]);
     };
+    const handleDownload=(inbox)=>{
+        return 1;
+    }
 
     const submitFileUpload = async (e) => {
         e.preventDefault();
@@ -90,9 +96,15 @@ export default function Hero() {
                 <h1>Inbox</h1>
                 {files.length > 0 ? (
                     files.slice(0, 5).map((inbox, index) => (
-                        <div className="spane" key={index}>
+                        <div className="spane" key={index} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                             <p style={{ color: "white" }}>{inbox.sender}</p>
-                            <p style={{ color: "white",fontSize:"0.5rem" }}>{inbox.timestamp}</p>
+                            {isHovered?<button className="download-btn" onClick={() => handleDownload(inbox)}>
+                                <Download color="cyan"/>
+                                </button>
+                                :<p style={{ color: "white", fontSize: "0.5rem" }}>{inbox.timestamp}
+                            </p>}
+
+                            
                         </div>
                     ))
                 ) : (
